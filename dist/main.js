@@ -25,7 +25,7 @@ eval("class Game {\n  constructor() {\n    this.towers = [[3, 2, 1], [], []];\n 
   \***************************/
 /***/ ((module) => {
 
-eval("class View {\n    constructor(hanoiGame, $element) {\n        this.hanoiGame = hanoiGame;\n        this.$element = $element;\n    }\n}\n\nmodule.exports = View;\n\n//# sourceURL=webpack:///./src/hanoi-view.js?");
+eval("class View {\n    constructor(hanoiGame, $element) {\n        this.hanoiGame = hanoiGame;\n        this.$element = $element;\n        this.setupTowers();\n    }\n\n    setupTowers() {\n        this.$element.append(`<ul class=\"tower-one\">\n        <li class=\"large\"></li>\n        <li class=\"medium\"></li>\n        <li class=\"small\"></li>\n        </ul>\n        <ul class=\"tower-two\"></ul>\n        <ul class=\"tower-three\"></ul>\n        `)\n    }\n\n}\n\nmodule.exports = View;\n\n//# sourceURL=webpack:///./src/hanoi-view.js?");
 
 /***/ }),
 
