@@ -6,14 +6,21 @@ class View {
     }
 
     setupTowers() {
-        this.$element.append(`<ul class="tower-one">
-        <li class="large"></li>
-        <li class="medium"></li>
-        <li class="small"></li>
-        </ul>
-        <ul class="tower-two"></ul>
-        <ul class="tower-three"></ul>
-        `)
+        this.$element.empty();
+
+        let $tower, $disc;
+        for (let towerIndex = 0; towerIndex < 3; towerIndex++) {
+            $tower = $('<ul>');
+            for (let discIndex = 0; discIndex < 3; discIndex++) {
+                $disc = $('<li>');
+                $tower.append($disc);
+            }
+            this.$element.append($tower);
+        }
+    }
+
+    render() {
+        
     }
 
 }
