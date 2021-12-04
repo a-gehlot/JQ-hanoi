@@ -3,6 +3,7 @@ class View {
         this.hanoiGame = hanoiGame;
         this.$element = $element;
         this.setupTowers();
+        this.render();
     }
 
     setupTowers() {
@@ -20,7 +21,12 @@ class View {
     }
 
     render() {
-        
+        this.hanoiGame.towers.forEach((tower, idx) => {
+            let $tower = this.$element.find('ul').eq(idx)
+            tower.forEach((disc, idx) => {
+                $tower.find('li').eq(idx).addClass(`data-disc-${disc}`)
+            })
+        })
     }
 
 }
