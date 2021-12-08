@@ -11,7 +11,7 @@ class View {
 
         let $tower, $disc;
         for (let towerIndex = 0; towerIndex < 3; towerIndex++) {
-            $tower = $('<ul>');
+            $tower = $('<ul class="tower">');
             for (let discIndex = 0; discIndex < 3; discIndex++) {
                 $disc = $('<li>');
                 $tower.append($disc);
