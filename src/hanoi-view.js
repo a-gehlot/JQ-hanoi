@@ -4,6 +4,8 @@ class View {
         this.$element = $element;
         this.setupTowers();
         this.render();
+        this.towerOne, this.towerTwo;
+        $('.tower').click(this.clickTower.bind(this));
     }
 
     setupTowers() {
@@ -27,6 +29,21 @@ class View {
                 $tower.find('li').eq(idx).addClass(`data-disc-${disc}`)
             })
         })
+    }
+
+    clickTower(event) {
+        if (typeof this.towerOne !== 'number') {
+            this.towerOne = $(event.currentTarget).index();
+        } else {
+            this.towerTwo = $(event.currentTarget).index();
+            if (this.hanoiGame.move(this.towerOne, this.towerTwo)) {
+                this.render();
+            } else {
+                alert("Invalid move")
+            }
+            this.towerOne = null;
+            this.towerTwo = null;
+        }
     }
 
 }
