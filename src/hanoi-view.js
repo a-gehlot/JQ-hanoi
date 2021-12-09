@@ -23,10 +23,12 @@ class View {
     }
 
     render() {
+        this.hanoiGame.print();
         this.hanoiGame.towers.forEach((tower, idx) => {
             let $tower = this.$element.find('ul').eq(idx)
+            $tower.find('li').removeClass();
             tower.forEach((disc, idx) => {
-                $tower.find('li').eq(idx).addClass(`data-disc-${disc}`)
+                $tower.find('li').eq(2-idx).addClass(`data-disc-${disc}`)
             })
         })
     }
