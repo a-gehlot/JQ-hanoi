@@ -81,3 +81,7 @@ table {
 	border: 1px solid orange;
 	height: 3rem;
 }
+
+.twr-select, .twr-select:hover {
+	border-bottom: 6px solid green;
+}

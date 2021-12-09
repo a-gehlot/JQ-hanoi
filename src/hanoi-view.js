@@ -36,6 +36,7 @@ class View {
     clickTower(event) {
         if (typeof this.towerOne !== 'number') {
             this.towerOne = $(event.currentTarget).index();
+            $(event.currentTarget).addClass('twr-select')
         } else {
             this.towerTwo = $(event.currentTarget).index();
             if (this.hanoiGame.move(this.towerOne, this.towerTwo)) {
@@ -43,6 +44,7 @@ class View {
             } else {
                 alert("Invalid move")
             }
+            $('.tower').eq(this.towerOne).removeClass('twr-select')
             this.towerOne = null;
             this.towerTwo = null;
         }
